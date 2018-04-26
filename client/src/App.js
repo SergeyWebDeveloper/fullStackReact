@@ -10,8 +10,10 @@ import Footer from './components/layout/Footer';
 import Landing from './components/layout/Landing';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
+import Dashboard from './components/dashboard/Dashboard';
 import store from './store';
 
+import {clearCurrentProfile} from "./actions/profileAction";
 import './App.css';
 
 if(localStorage.jwtToken){
@@ -22,6 +24,7 @@ if(localStorage.jwtToken){
 	const currentTime = Date.now()/1000;
 	if(decoded.exp<currentTime){
 		store.dispatch(logoutUser());
+		store.dispatch(clearCurrentProfile());
 		window.location.href='/login';
 	}
 	console.log(currentTime,'---',decoded.exp);
@@ -38,6 +41,7 @@ class App extends Component {
 						<div className="container">
 							<Route path='/login' component={Login}/>
 							<Route path='/register' component={Register}/>
+							<Route path='/dashboard' component={Dashboard}/>
 						</div>
 						<Footer/>
 					</div>
