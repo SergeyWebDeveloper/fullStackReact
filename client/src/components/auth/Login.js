@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import classnames from 'classnames';
+
 import {loginUser} from '../../actions/authAction';
+import TextFieldGroup from '../common/TextFieldGroup';
 
 class Login extends Component {
 	state = {
@@ -51,32 +52,22 @@ class Login extends Component {
 							<h1 className="display-4 text-center">Логин</h1>
 							<p className="lead text-center">Войти в аккаунт</p>
 							<form noValidate onSubmit={this.onSubmit}>
-								<div className="form-group">
-									<input
-										type="email"
-										className={classnames('form-control form-control-lg',{
-											'is-invalid': errors.email
-										})}
-										placeholder="Email адрес"
-										name="email"
-										onChange={this.onChange}
-										value={this.state.email}
-									/>
-									{errors.email && (<div className='invalid-feedback'>{errors.email}</div>)}
-								</div>
-								<div className="form-group">
-									<input
-										type="password"
-										className={classnames('form-control form-control-lg',{
-											'is-invalid': errors.password
-										})}
-										placeholder="Пароль"
-										name="password"
-										onChange={this.onChange}
-										value={this.state.password}
-									/>
-									{errors.password && (<div className='invalid-feedback'>{errors.password}</div>)}
-								</div>
+								<TextFieldGroup
+									type="email"
+									placeholder="Email адрес"
+									name="email"
+									onChange={this.onChange}
+									value={this.state.email}
+									error={errors.email}
+								/>
+								<TextFieldGroup
+									type="password"
+									placeholder="Пароль"
+									name="password"
+									onChange={this.onChange}
+									value={this.state.password}
+									error={errors.password}
+								/>
 								<input type="submit" className="btn btn-info btn-block mt-4"/>
 							</form>
 						</div>
