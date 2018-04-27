@@ -24,7 +24,7 @@ class Dashboard extends Component {
 			} else {
 				dashboardConent = (
 					<div>
-						<p className="lead text-muted">Добро пожаловать {user.name}</p>
+						<p className="lead text-muted">Добро пожаловать, {user.name}</p>
 						<p>К сожалению, Вы пока не имеете профиля. <br/>
 							Пожалуйста, добавьте информацию о себе</p>
 						<Link
