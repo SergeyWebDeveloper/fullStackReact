@@ -15,6 +15,7 @@ import store from './store';
 
 import {clearCurrentProfile} from "./actions/profileAction";
 import PrivateRoute from './components/common/PrivateRoute';
+import CreateProfile from './components/create-profile/CreateProfile';
 import './App.css';
 
 if (localStorage.jwtToken) {
@@ -44,6 +45,7 @@ class App extends Component {
 							<Route path='/register' component={Register}/>
 							<Switch>
 								<PrivateRoute path='/dashboard' component={Dashboard}/>
+								<PrivateRoute path='/create-profile' component={CreateProfile}/>
 							</Switch>
 						</div>
 						<Footer/>
