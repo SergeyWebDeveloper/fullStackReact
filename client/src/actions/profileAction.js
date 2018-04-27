@@ -3,8 +3,7 @@ import axios from 'axios';
 import {
 	GET_PROFILE,
 	PROFILE_LOADING,
-	CLEAR_CURRENT_PROFILE,
-	GET_ERRORS
+	CLEAR_CURRENT_PROFILE
 } from './types';
 
 export const getCurrentProfile = () => dispatch => {
