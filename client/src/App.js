@@ -20,6 +20,7 @@ import CreateProfile from './components/create-profile/CreateProfile';
 import AddExperience from './components/add-credentials/AddExperience';
 import AddEducation from './components/add-credentials/AddEducation';
 import Profiles from './components/profiles/Profiles';
+import Profile from './components/profile/Profile';
 import './App.css';
 
 if (localStorage.jwtToken) {
@@ -33,7 +34,6 @@ if (localStorage.jwtToken) {
 		store.dispatch(clearCurrentProfile());
 		window.location.href = '/login';
 	}
-	console.log(currentTime, '---', decoded.exp);
 }
 
 class App extends Component {
@@ -48,6 +48,7 @@ class App extends Component {
 							<Route path='/login' component={Login}/>
 							<Route path='/register' component={Register}/>
 							<Route path='/profiles' component={Profiles}/>
+							<Route path='/profile/:handle' component={Profile}/>
 							<Switch>
 								<PrivateRoute path='/dashboard' component={Dashboard}/>
 								<PrivateRoute path='/create-profile' component={CreateProfile}/>
