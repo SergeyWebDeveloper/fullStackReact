@@ -68,6 +68,7 @@ class EditProfile extends Component {
 				facebook: profile.facebook,
 				linkedin: profile.linkedin,
 				youtube: profile.youtube,
+				instagram: profile.instagram
 			});
 		}
 	}
@@ -253,7 +254,7 @@ class EditProfile extends Component {
 								{socialInputs}
 								<input
 									type='submit'
-									value='Submit'
+									value='Отправить'
 									className='btn btn-info btn-block mt-4'
 								/>
 							</form>

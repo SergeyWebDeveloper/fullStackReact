@@ -19,6 +19,7 @@ import PrivateRoute from './components/common/PrivateRoute';
 import CreateProfile from './components/create-profile/CreateProfile';
 import AddExperience from './components/add-credentials/AddExperience';
 import AddEducation from './components/add-credentials/AddEducation';
+import Profiles from './components/profiles/Profiles';
 import './App.css';
 
 if (localStorage.jwtToken) {
@@ -46,6 +47,7 @@ class App extends Component {
 						<div className="container">
 							<Route path='/login' component={Login}/>
 							<Route path='/register' component={Register}/>
+							<Route path='/profiles' component={Profiles}/>
 							<Switch>
 								<PrivateRoute path='/dashboard' component={Dashboard}/>
 								<PrivateRoute path='/create-profile' component={CreateProfile}/>
