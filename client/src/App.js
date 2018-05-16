@@ -21,6 +21,7 @@ import AddExperience from './components/add-credentials/AddExperience';
 import AddEducation from './components/add-credentials/AddEducation';
 import Profiles from './components/profiles/Profiles';
 import Profile from './components/profile/Profile';
+import NotFound from './components/not-found/NotFound';
 import './App.css';
 
 if (localStorage.jwtToken) {
@@ -49,12 +50,13 @@ class App extends Component {
 							<Route path='/register' component={Register}/>
 							<Route path='/profiles' component={Profiles}/>
 							<Route path='/profile/:handle' component={Profile}/>
+							<Route path='/not-found' component={NotFound}/>
 							<Switch>
-								<PrivateRoute path='/dashboard' component={Dashboard}/>
-								<PrivateRoute path='/create-profile' component={CreateProfile}/>
-								<PrivateRoute path='/edit-profile' component={EditProfile}/>
-								<PrivateRoute path='/add-experience' component={AddExperience}/>
-								<PrivateRoute path='/add-education' component={AddEducation}/>
+								<PrivateRoute exact path='/dashboard' component={Dashboard}/>
+								<PrivateRoute exact path='/create-profile' component={CreateProfile}/>
+								<PrivateRoute exact path='/edit-profile' component={EditProfile}/>
+								<PrivateRoute exact path='/add-experience' component={AddExperience}/>
+								<PrivateRoute exact path='/add-education' component={AddEducation}/>
 							</Switch>
 						</div>
 						<Footer/>

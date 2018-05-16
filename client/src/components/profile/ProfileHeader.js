@@ -70,4 +70,8 @@ class ProfileHeader extends Component {
 	}
 }
 
+ProfileHeader.propTypes = {
+	profile: PropTypes.object.isRequired
+};
+
 export default ProfileHeader;
