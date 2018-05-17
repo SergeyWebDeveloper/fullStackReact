@@ -1,4 +1,8 @@
-import {ADD_POST, GET_ERRORS} from '../actions/types';
+import {
+	ADD_POST,
+	GET_POSTS,
+	POST_LOADING
+} from '../actions/types';
 
 const initialState = {
 	posts: [],
@@ -11,7 +15,18 @@ export default (state = initialState, action) => {
 		case ADD_POST:
 			return {
 				...state,
-				post: [action.payload, ...state.posts]
+				posts: [action.payload, ...state.posts]
+			};
+		case POST_LOADING:
+			return {
+				...state,
+				loading: true
+			};
+		case GET_POSTS:
+			return {
+				...state,
+				posts: action.payload,
+				loading: false
 			};
 		default:
 			return state;
